@@ -1,0 +1,59 @@
+{
+  "name": "app2",
+  "version": "0.0.1",
+  "private": true,
+  "installConfig": {
+    "hoistingLimits": "workspaces"
+  },
+  "scripts": {
+    "android": "react-native run-android --no-packager",
+    "ios": "react-native run-ios --no-packager",
+    "pod_install": "cd ./ios && pod install",
+    "start": "react-native webpack-start --port 9001",
+    "start:standalone": "STANDALONE=1 react-native webpack-start --port 8082",
+    "build": "webpack -c webpack.config.mjs --env platform=ios --env mode=production",
+    "deploy": "aws s3 cp build/ios s3://cdntest.taptap.com.vn/mobile-app/app2/2802 --recursive",
+    "list": "aws s3 ls s3://cdntest.taptap.com.vn/mobile-app/app2/2802 --recursive"
+  },
+  "dependencies": {
+    "@aashu-dubey/react-native-rating-bar": "^0.2.0",
+    "@miblanchard/react-native-slider": "^2.1.0",
+    "@ptomasroos/react-native-multi-slider": "^2.2.2",
+    "@react-native-community/blur": "^4.2.0",
+    "@react-native-masked-view/masked-view": "0.2.8",
+    "@react-navigation/bottom-tabs": "6.3.2",
+    "@react-navigation/drawer": "^6.5.0",
+    "@react-navigation/native": "6.0.11",
+    "@react-navigation/stack": "6.2.2",
+    "@reduxjs/toolkit": "^1.8.2",
+    "@types/react-native-vector-icons": "^6.4.12",
+    "install": "^0.13.0",
+    "npm": "^8.12.1",
+    "react": "17.0.2",
+    "react-native": "0.68.2",
+    "react-native-dotenv": "3.4.7",
+    "react-native-gesture-handler": "2.6.2",
+    "react-native-reanimated": "^2.13.0",
+    "react-native-safe-area-context": "4.3.4",
+    "react-native-screens": "3.17.0",
+    "react-native-vector-icons": "^9.2.0",
+    "react-redux": "^8.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@callstack/eslint-config": "^12.0.2",
+    "@callstack/repack": "^3.0.0",
+    "@types/react-native": "^0.67.3",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.18.0",
+    "metro-react-native-babel-preset": "^0.67.0",
+    "terser-webpack-plugin": "^5.3.3",
+    "typescript": "^4.4.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "5.0.1"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  }
+}

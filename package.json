@@ -1,0 +1,17 @@
+{
+  "name": "repack-examples",
+  "packageManager": "yarn@3.2.1",
+  "workspaces": [
+    "esbuild",
+    "local-chunks",
+    "module-federation",
+    "swc"
+  ],
+  "scripts": {
+    "bootstrap": "yarn workspaces foreach run bootstrap",
+    "clean": "find ./ -type d -name 'node_modules' -exec rm -rf '{}' +"
+  },
+  "resolutions": {
+    "@types/react": "^18"
+  }
+}
